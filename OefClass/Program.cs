@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace OefClass
 {
@@ -6,7 +8,22 @@ namespace OefClass
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Table[] tables = new Table[10];
+
+            Random rnd = new Random();
+
+            for( int i = 0; i < 11; i++)
+            {
+                var w = rnd.Next(50, 201);
+                var h = rnd.Next(50, 201);
+                var t = new Table(w, h);
+                tables[i] = t;
+            }
+
+            foreach (var t in tables)
+            {
+                t.ShowData();
+            }
         }
     }
 }
